@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Profile = () => {
+const ProfilePage = () => {
     const x = "profile page under construction";
     return (
         <div>
@@ -9,4 +9,4 @@ const Profile = () => {
     );
 }
 
-export default Profile;
+export default ProfilePage;
