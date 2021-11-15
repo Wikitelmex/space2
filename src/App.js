@@ -4,6 +4,10 @@ import {
   Route,
 } from 'react-router-dom';
 import './App.css';
+
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 import Navbar from './Components/Navbar';
 import ProfilePage from './Pages/ProfilePage';
 import RocketsPage from './Pages/RocketsPage';
@@ -11,11 +15,11 @@ import MissionsPage from './Pages/MissionsPage';
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <Router>
         <Navbar />
         <div className="App">
-            <p>Space App</p>
+          <p>Space App</p>
         </div>
         <Switch>
           <Route exact path="/">
@@ -29,7 +33,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </>
+    </Provider>
   );
 }
 
