@@ -1,3 +1,12 @@
-const Profile = () => <div> <h2>Under construction</h2> </div>
+import React from 'react';
+
+const Profile = () => {
+    const x = "profile page under construction";
+    return (
+        <div>
+            <p>{x}</p>
+        </div>
+    );
+}
 
 export default Profile;
