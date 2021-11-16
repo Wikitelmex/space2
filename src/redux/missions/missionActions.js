@@ -8,7 +8,7 @@ import {
   FETCH_MISSIONS_FAILURE,
 } from './missionTypes';
 
-//const { v4: uuidv4 } = require('uuid');
+// const { v4: uuidv4 } = require('uuid');
 
 export const addMission = (mission) => ({
   type: ADD_MISSION,
@@ -43,14 +43,12 @@ export const fetchMissions = () => (dispatch) => {
   dispatch(fetchMissionsRequest());
   axios.get('https://api.spacexdata.com/v3/missions')
     .then((response) => {
-      const mapResponse = response.data.map(mission => {
-        return {
-          id: mission.mission_id,
-          name: mission.mission_name,
-          description: mission.description,
-        }
-      });
-      dispatch(fetchMissionsSuccess(mapResponse))
+      const mapResponse = response.data.map((mission) => ({
+        id: mission.mission_id,
+        name: mission.mission_name,
+        description: mission.description,
+      }));
+      dispatch(fetchMissionsSuccess(mapResponse));
     })
     .catch((error) => dispatch(fetchMissionsFailure(error)));
 };
