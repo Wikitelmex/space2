@@ -37,9 +37,16 @@ const fetchMissionsFailure = (error) => ({
   payload: error,
 });
 
-export const fetchMissions = (dispatch) => {
+export const fetchMissions = () => (dispatch) => {
   dispatch(fetchMissionsRequest());
-  axios.get('http://localhost:3001/missions')
-    .then((response) => dispatch(fetchMissionsSuccess(response.data)))
+  axios.get('https://api.spacexdata.com/v3/missions')
+    .then((response) => {
+      const mapResponse = response.data.map((mission) => ({
+        id: mission.mission_id,
+        name: mission.mission_name,
+        description: mission.description,
+      }));
+      dispatch(fetchMissionsSuccess(mapResponse));
+    })
     .catch((error) => dispatch(fetchMissionsFailure(error)));
 };
