@@ -1,18 +1,12 @@
 import axios from 'axios';
 import {
-  ADD_ROCKET,
-  REMOVE_ROCKET,
+  TOGGLE_RESERVATION,
   FETCH_ROCKETS,
   FETCH_ROCKETS_FAILURE,
 } from './rocketTypes';
 
-export const addRocket = (payload) => ({
-  type: ADD_ROCKET,
-  payload,
-});
-
-export const removeRocket = (payload) => ({
-  type: REMOVE_ROCKET,
+export const toggleReservation = (payload) => ({
+  type: TOGGLE_RESERVATION,
   payload,
 });
 

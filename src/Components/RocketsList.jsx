@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets } from '../redux/rockets/rocketActions';
+import { fetchRockets, toggleReservation } from '../redux/rockets/rocketActions';
 import Rocket from './Rocket';
 
 const RocketsList = () => {
@@ -13,6 +13,11 @@ const RocketsList = () => {
     }
   }, []);
 
+  const handleClick = ((e) => {
+    e.preventDefault();
+    dispatch(toggleReservation(e.target.id));
+  });
+
   return (
     <ul>
       {rockets.map((rocket) => (
@@ -22,6 +27,8 @@ const RocketsList = () => {
             name={rocket.name}
             description={rocket.description}
             image={rocket.flickrImages[0]}
+            handleClick={handleClick}
+            added={rocket.added}
           />
         </li>
       ))}
