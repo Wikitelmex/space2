@@ -28,7 +28,9 @@ const missionReducer = (state = initialState, action) => {
     case UPDATE_MISSION:
       return {
         ...state,
-        missions: state.missions.map((mission) => (mission.id === action.payload.id ? action.payload : mission)),
+        missions: state.missions.map(
+          (mission) => (mission.id === action.payload.id ? action.payload : mission),
+        ),
       };
     case FETCH_MISSIONS_REQUEST:
       return {
