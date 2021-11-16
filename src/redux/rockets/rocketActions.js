@@ -25,16 +25,21 @@ const fetchRocketFailure = () => ({
   type: FETCH_ROCKETS_FAILURE,
 });
 
-export const fetchRockets = () => (dispatch) => {
-  axios.get('https://api.spacexdata.com/v3/rockets').then((response) => {
+export const fetchRockets = () => async (dispatch) => {
+  try {
+    const response = await axios.get('https://api.spacexdata.com/v3/rockets');
     const rockets = response.data.map((entry) => {
       const id = entry.rocket_id;
       const name = entry.rocket_name;
-      const { description, flickr_images } = entry;
+      const { description, flickr_images: flickrImages } = entry;
       const added = false;
-      const rocket = {id, name, description, flickr_images, added};
+      const rocket = {
+        id, name, description, flickrImages, added,
+      };
       return rocket;
     });
     dispatch(fetchRocketRequest(rockets));
-  });
+  } catch (error) {
+    dispatch(fetchRocketFailure());
+  }
 };

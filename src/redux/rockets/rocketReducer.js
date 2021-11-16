@@ -6,29 +6,29 @@ import {
 
 const initialState = {
   rockets: [],
-}
+};
 
 const rocketsReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case FETCH_ROCKETS:
-      return {...state , rockets: action.payload};
+      return { ...state, rockets: action.payload };
     case REMOVE_ROCKET:
       return state.map((mission) => {
-        if(mission.id === action.payload.id){
-          return {...mission, added: false}
+        if (mission.id === action.payload.id) {
+          return { ...mission, added: false };
         }
-        return mission
+        return mission;
       });
     case ADD_ROCKET:
       return state.map((mission) => {
-        if(mission.id === action.payload.id){
-          return {...mission, added: true}
+        if (mission.id === action.payload.id) {
+          return { ...mission, added: true };
         }
-        return mission
+        return mission;
       });
     default:
-      return state;  
+      return state;
   }
-}
+};
 
 export default rocketsReducer;
