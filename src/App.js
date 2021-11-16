@@ -12,10 +12,12 @@ import Navbar from './Components/Navbar';
 import ProfilePage from './Pages/ProfilePage';
 import RocketsPage from './Pages/RocketsPage';
 import MissionsPage from './Pages/MissionsPage';
+import FetchLoaderComponent from './Components/FetchLoaderComponent';
 
 function App() {
   return (
     <Provider store={store}>
+      <FetchLoaderComponent />
       <Router>
         <Navbar />
         <div className="App">

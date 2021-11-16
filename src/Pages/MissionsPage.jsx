@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchMissions, updateMission } from '../redux';
 
-const MissionsPage = ({ fetchMissions, updateMission, missionData }) => {
+const MissionsPage = ({ updateMission, missionData }) => {
+  /*
   useEffect(() => {
     fetchMissions();
   }, []);
+  */
 
   if (missionData.loading) {
     return <div>Loading...</div>;
@@ -55,7 +57,6 @@ const MissionsPage = ({ fetchMissions, updateMission, missionData }) => {
 };
 
 MissionsPage.propTypes = {
-  fetchMissions: PropTypes.func.isRequired,
   updateMission: PropTypes.func.isRequired,
   missionData: PropTypes.shape({
     loading: PropTypes.bool,
