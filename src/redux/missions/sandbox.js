@@ -1,4 +1,4 @@
-const apiresponse =
+/*const apiresponse =
     [
         {
             mission_id: "1",
@@ -32,4 +32,38 @@ const mapResponse = apiresponse.map(mission => {
     }
 });
 
-console.log(apiResponseMapped);
+console.log(apiResponseMapped);*/
+
+'use strict';
+
+
+
+/*
+ * Complete the 'gradingStudents' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY grades as parameter.
+ */
+
+function gradingStudents(grades) {
+    const result = [];
+    grades.forEach(element => {
+        result.push(
+            element < 0? 0 :
+            element >100? 100 :
+            element >= 38 && element % 5 >= 3 ? element + (5 - element % 5) :
+            element
+        );
+    });
+    return result;
+}
+
+
+
+let grades = [58, 45, 56, 78, 90, 100, 83, 52, 23, 12, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10];
+
+
+
+const result = gradingStudents(grades);
+console.log(result);
+
