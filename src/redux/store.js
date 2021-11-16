@@ -8,7 +8,7 @@ import rocketsReducer from './rockets/rocketReducer';
 
 const mixReducer = combineReducers({
   // add reducers here
-  missions: missionsReducer,
+  missionsReducer,
   rockets: rocketsReducer,
 });
 

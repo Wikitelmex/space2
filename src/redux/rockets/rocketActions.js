@@ -25,9 +25,8 @@ const fetchRocketFailure = () => ({
   type: FETCH_ROCKETS_FAILURE,
 });
 
-export const fetchRockets = () => async (dispatch) => {
-  try{
-    const response = await axios.get('https://api.spacexdata.com/v3/rockets');
+export const fetchRockets = () => (dispatch) => {
+  axios.get('https://api.spacexdata.com/v3/rockets').then((response) => {
     const rockets = response.data.map((entry) => {
       const id = entry.rocket_id;
       const name = entry.rocket_name;
@@ -37,7 +36,5 @@ export const fetchRockets = () => async (dispatch) => {
       return rocket;
     });
     dispatch(fetchRocketRequest(rockets));
-  }catch(err){
-    dispatch(fetchRocketFailure());
-  }
+  });
 };

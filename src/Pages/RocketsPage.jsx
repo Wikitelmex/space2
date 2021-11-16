@@ -1,10 +1,10 @@
 import React from 'react';
+import RocketsList from '../Components/RocketsList';
 
 const RocketsPage = () => {
-    const x = "rockets page under construction";
     return (
         <div>
-            <p>{x}</p>
+            <RocketsList />
         </div>
     );
 }

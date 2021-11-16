@@ -1,7 +1,7 @@
 import {
   ADD_ROCKET,
   REMOVE_ROCKET,
-  FETCH_ROCKETS_REQUEST,
+  FETCH_ROCKETS,
 } from './rocketTypes';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
 
 const rocketsReducer = (state = initialState, action) => {
   switch(action.type) {
-    case FETCH_ROCKETS_REQUEST:
+    case FETCH_ROCKETS:
       return action.payload;
     case REMOVE_ROCKET:
       return state.map((mission) => {
