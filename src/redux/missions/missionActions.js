@@ -47,6 +47,7 @@ export const fetchMissions = () => (dispatch) => {
         id: mission.mission_id,
         name: mission.mission_name,
         description: mission.description,
+        reserved: false,
       }));
       dispatch(fetchMissionsSuccess(mapResponse));
     })
