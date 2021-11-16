@@ -11,7 +11,7 @@ const initialState = {
 const rocketsReducer = (state = initialState, action) => {
   switch(action.type) {
     case FETCH_ROCKETS:
-      return action.payload;
+      return {...state , rockets: action.payload};
     case REMOVE_ROCKET:
       return state.map((mission) => {
         if(mission.id === action.payload.id){
