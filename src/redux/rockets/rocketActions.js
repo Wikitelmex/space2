@@ -2,44 +2,42 @@ import axios from 'axios';
 import {
   ADD_ROCKET,
   REMOVE_ROCKET,
-  UPDATE_ROCKET,
-  FETCH_ROCKETS_REQUEST,
-  FETCH_ROCKETS_SUCCESS,
+  FETCH_ROCKETS,
   FETCH_ROCKETS_FAILURE,
 } from './rocketTypes';
 
-export const addMission = (rocket) => ({
+export const addRocket = (payload) => ({
   type: ADD_ROCKET,
-  payload: rocket,
+  payload,
 });
 
-export const removeMission = (rocketId) => ({
+export const removeRocket = (payload) => ({
   type: REMOVE_ROCKET,
-  payload: rocketId,
+  payload,
 });
 
-export const updateMission = (rocket) => ({
-  type: UPDATE_ROCKET,
-  payload: rocket,
+const fetchRocketRequest = (payload) => ({
+  type: FETCH_ROCKETS,
+  payload,
 });
 
-const fetchMissionsRequest = () => ({
-  type: FETCH_ROCKETS_REQUEST,
-});
-
-const fetchMissionsSuccess = (rockets) => ({
-  type: FETCH_ROCKETS_SUCCESS,
-  payload: rockets,
-});
-
-const fetchMissionsFailure = (error) => ({
+const fetchRocketFailure = () => ({
   type: FETCH_ROCKETS_FAILURE,
-  payload: error,
 });
 
-export const fetchMissions = (dispatch) => {
-  dispatch(fetchMissionsRequest());
-  axios.get('http://localhost:3001/rockets')
-    .then((response) => dispatch(fetchMissionsSuccess(response.data)))
-    .catch((error) => dispatch(fetchMissionsFailure(error)));
+export const fetchRockets = () => async (dispatch) => {
+  try{
+    const response = await axios.get('https://api.spacexdata.com/v3/rockets');
+    const rockets = response.data.map((entry) => {
+      const id = entry.rocket_id;
+      const name = entry.rocket_name;
+      const { description, flickr_images } = entry;
+      const added = false;
+      const rocket = {id, name, description, flickr_images, added};
+      return rocket;
+    });
+    dispatch(fetchRocketRequest(rockets));
+  }catch(err){
+    dispatch(fetchRocketFailure());
+  }
 };

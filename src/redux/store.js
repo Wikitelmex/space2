@@ -4,10 +4,12 @@ import thunk from 'redux-thunk';
 
 // import reducers here
 import missionsReducer from './missions/missionReducer.js';
+import rocketsReducer from './rockets/rocketReducer';
 
 const mixReducer = combineReducers({
   // add reducers here
   missions: missionsReducer,
+  rockets: rocketsReducer,
 });
 
 const store = createStore(
