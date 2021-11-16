@@ -17,7 +17,12 @@ const RocketsList = () => {
     <ul>
       {rockets.map((rocket) => (
         <li key={rocket.id}>
-          <Rocket id={rocket.id} name={rocket.name} description={rocket.description} />
+          <Rocket
+            id={rocket.id}
+            name={rocket.name}
+            description={rocket.description}
+            image={rocket.flickrImages[0]}
+          />
         </li>
       ))}
     </ul>
