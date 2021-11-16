@@ -8,8 +8,6 @@ import {
   FETCH_ROCKETS_FAILURE,
 } from './rocketTypes';
 
-const { v4: uuidv4 } = require('uuid');
-
 export const addMission = (rocket) => ({
   type: ADD_ROCKET,
   payload: rocket,
