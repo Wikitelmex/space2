@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchMissions } from '../redux';
+import { fetchMissions, updateMission } from '../redux';
 
-const MissionsPage = ({ fetchMissions, missionData }) => {
+const MissionsPage = ({ updateMission, missionData }) => {
+  /*
   useEffect(() => {
     fetchMissions();
   }, []);
+  */
 
   if (missionData.loading) {
     return <div>Loading...</div>;
@@ -32,6 +34,20 @@ const MissionsPage = ({ fetchMissions, missionData }) => {
             <li key={mission.id}>
               <h2>{mission.name}</h2>
               <p>{mission.description}</p>
+              <p
+                className={mission.reserved ? 'badge bg-info text-dark' : 'badge bg-secondary'}
+              >
+                {mission.reserved ? 'Active member' : 'NOT A member'}
+              </p>
+              <button
+                className={mission.reserved ? 'btn btn-outline-danger' : 'btn btn-outline-secondary'}
+                type="button"
+                onClick={() => updateMission(
+                  { ...mission, reserved: !mission.reserved },
+                )}
+              >
+                {mission.reserved ? 'Leave Mission' : 'Join Mission'}
+              </button>
             </li>
           ))
         }
@@ -41,7 +57,7 @@ const MissionsPage = ({ fetchMissions, missionData }) => {
 };
 
 MissionsPage.propTypes = {
-  fetchMissions: PropTypes.func.isRequired,
+  updateMission: PropTypes.func.isRequired,
   missionData: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.string,
@@ -49,6 +65,7 @@ MissionsPage.propTypes = {
       id: PropTypes.number,
       name: PropTypes.string,
       description: PropTypes.string,
+      reserved: PropTypes.bool,
     })),
   }).isRequired,
 };
@@ -59,6 +76,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchMissions: () => dispatch(fetchMissions()),
+  updateMission: (mission) => dispatch(updateMission(mission)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MissionsPage);
