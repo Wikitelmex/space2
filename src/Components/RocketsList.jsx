@@ -19,7 +19,7 @@ const RocketsList = () => {
   });
 
   return (
-    <ul>
+    <ul className="p-5">
       {rockets.map((rocket) => (
         <li key={rocket.id}>
           <Rocket
