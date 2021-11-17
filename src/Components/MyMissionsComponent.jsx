@@ -3,26 +3,29 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 const ProfilePage = ({ missionData }) => {
-  console.log('missionData', missionData);
   if (missionData.missions.length === 0) {
     return <div>No Missions loaded yet...</div>;
   }
 
   return (
     <div>
-      <ul>
+      <table className="border col-6">
         {
           missionData
           && missionData.missions
           && missionData.missions
             .filter((mission) => mission.reserved === true)
             .map((mission) => (
-              <li key={mission.id}>
-                <h2>{mission.name}</h2>
-              </li>
+              <tr className="border" key={mission.id}>
+                <td className="align-middle">
+                  <p className="mt-3 ms-2">
+                    {mission.name}
+                  </p>
+                </td>
+              </tr>
             ))
         }
-      </ul>
+      </table>
     </div>
   );
 };

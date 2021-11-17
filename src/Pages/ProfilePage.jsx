@@ -2,10 +2,10 @@ import React from 'react';
 import MyMissionsComponent from '../Components/MyMissionsComponent';
 
 const ProfilePage = () => {
-  const x = 'profile page under construction';
+  const PageName = <h1>Profile Page</h1>;
   return (
     <div>
-      <p>{x}</p>
+      {PageName}
       <div>
         <h2>My Missions</h2>
         <MyMissionsComponent />
