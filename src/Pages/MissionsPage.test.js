@@ -1,16 +1,17 @@
-import React from "react";
-import { render, cleanup } from "@testing-library/react";
-import MissionsPage from "../Pages/MissionsPage";
-
+import React from 'react';
+import { render, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import MissionsPage from './MissionsPage';
+
 import store from '../redux/store';
 
 afterEach(cleanup);
 
-it("renders mission page with redux", () => {
+it('renders mission page with redux', () => {
   const { asFragment } = render(
     <Provider store={store}>
       <MissionsPage />
-    </Provider>);
+    </Provider>,
+  );
   expect(asFragment()).toMatchSnapshot();
 });
