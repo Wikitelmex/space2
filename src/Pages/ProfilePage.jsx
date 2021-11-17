@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux';
 import MyMissionsComponent from '../Components/MyMissionsComponent';
 
 const ProfilePage = () => {
-  const x = 'profile page under construction';
+  const PageName = <h1>Profile Page</h1>;
   const rockets = useSelector((state) => state.rockets.rockets);
   const myMyrockets = rockets.filter((rocket) => rocket.added === true);
+
   return (
     <div>
-      <p>{x}</p>
+      {PageName}
       <div>
         <h2>My Missions</h2>
         <MyMissionsComponent />

@@ -12,28 +12,29 @@ import Navbar from './Components/Navbar';
 import ProfilePage from './Pages/ProfilePage';
 import RocketsPage from './Pages/RocketsPage';
 import MissionsPage from './Pages/MissionsPage';
-import FetchLoaderComponent from './Components/FetchLoaderComponent';
+// import FetchLoaderComponent from './Components/FetchLoaderComponent';
 
 function App() {
   return (
     <Provider store={store}>
-      <FetchLoaderComponent />
       <Router>
         <Navbar />
-        <div className="App">
-          <p>Space App</p>
+        <br />
+        <br />
+        <br />
+        <div>
+          <Switch>
+            <Route exact path="/">
+              <ProfilePage />
+            </Route>
+            <Route path="/rockets">
+              <RocketsPage />
+            </Route>
+            <Route path="/missions">
+              <MissionsPage />
+            </Route>
+          </Switch>
         </div>
-        <Switch>
-          <Route exact path="/">
-            <ProfilePage />
-          </Route>
-          <Route path="/rockets">
-            <RocketsPage />
-          </Route>
-          <Route path="/missions">
-            <MissionsPage />
-          </Route>
-        </Switch>
       </Router>
     </Provider>
   );
