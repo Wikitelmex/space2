@@ -1,3 +1,24 @@
 body {
   margin: 5px;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.rocket-img {
+  width: 100%;
+}
+
+.btn-reserve,
+.btn-cancel {
+  padding: 6px;
+}
+
+.btn-cancel {
+  width: 200px;
+}
+
+.btn-reserve {
+  width: 150px;
+}

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const ReservationButton = ({ id, added, handleClick }) => {
   const buttonText = added ? 'CANCEL RESERVATION' : 'RESERVE ROCKET';
-  const buttonClass = added ? 'btn btn-secondary' : 'btn btn-primary';
+  const buttonClass = added ? 'btn btn-secondary btn-cancel' : 'btn btn-primary btn-reserve';
 
   return (
     <button id={id} onClick={handleClick} type="submit" className={buttonClass}>{buttonText}</button>
