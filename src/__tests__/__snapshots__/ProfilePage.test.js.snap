@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches ProfilePage component snapshot 1`] = `
+<div>
+  <h1>
+    Profile Page
+  </h1>
+  <div
+    className="d-flex flex-row col-12"
+  >
+    <div
+      className="col-6 p-3"
+    >
+      <h2>
+        My Missions
+      </h2>
+      <div>
+        No Missions loaded yet...
+      </div>
+    </div>
+    <div
+      className="col-6 p-3"
+    >
+      <h2>
+        My Rockets
+      </h2>
+      <div>
+        <table
+          className="border col-12"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
