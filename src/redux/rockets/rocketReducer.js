@@ -1,6 +1,5 @@
 import {
-  ADD_ROCKET,
-  REMOVE_ROCKET,
+  TOGGLE_RESERVATION,
   FETCH_ROCKETS,
 } from './rocketTypes';
 
@@ -12,20 +11,14 @@ const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
       return { ...state, rockets: action.payload };
-    case REMOVE_ROCKET:
-      return state.map((mission) => {
-        if (mission.id === action.payload.id) {
-          return { ...mission, added: false };
-        }
-        return mission;
-      });
-    case ADD_ROCKET:
-      return state.map((mission) => {
-        if (mission.id === action.payload.id) {
-          return { ...mission, added: true };
-        }
-        return mission;
-      });
+    case TOGGLE_RESERVATION:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => {
+          if (rocket.id === action.payload) return { ...rocket, added: !rocket.added };
+          return rocket;
+        }),
+      };
     default:
       return state;
   }
