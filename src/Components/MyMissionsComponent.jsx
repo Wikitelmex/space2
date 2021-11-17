@@ -9,7 +9,7 @@ const ProfilePage = ({ missionData }) => {
 
   return (
     <div>
-      <table className="border col-6">
+      <table className="border col-12">
         {
           missionData
           && missionData.missions
