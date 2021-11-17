@@ -8,6 +8,7 @@ const Rocket = ({
     <h3>{id}</h3>
     <h2>{name}</h2>
     <p>{description}</p>
+    {added && <p className="badge bg-info">Reserved</p>}
     <ReservationButton
       id={id}
       added={added}
