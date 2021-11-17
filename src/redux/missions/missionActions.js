@@ -8,8 +8,6 @@ import {
   FETCH_MISSIONS_FAILURE,
 } from './missionTypes';
 
-// const { v4: uuidv4 } = require('uuid');
-
 export const addMission = (mission) => ({
   type: ADD_MISSION,
   payload: mission,
