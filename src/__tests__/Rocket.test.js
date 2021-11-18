@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import * as reactRedux from 'react-redux';
 import RocketsList from '../Components/RocketsList';
-import Rocket from '../Components/Rocket'
+import Rocket from '../Components/Rocket';
 
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
@@ -23,7 +23,7 @@ describe('Test Rockets component', () => {
           flickrImages: ['image-link'],
         },
       ],
-    }
+    },
   };
   beforeEach(() => {
     useDispatchMock.mockImplementation(() => () => {});
