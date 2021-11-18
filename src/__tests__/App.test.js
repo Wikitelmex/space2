@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import store from './redux/store';
-import App from './App';
+import store from '../redux/store';
+import App from '../App';
 
 afterEach(cleanup);
 

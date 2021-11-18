@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import MissionsPage from './MissionsPage';
+import MissionsPage from '../Pages/MissionsPage';
 
 import store from '../redux/store';
 

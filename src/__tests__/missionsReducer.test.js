@@ -7,7 +7,7 @@ import {
   fetchMissionsRequest,
   fetchMissionsSuccess,
   fetchMissionsFailure,
-} from './missionActions';
+} from '../redux/missions/missionActions';
 
 const middlewares = [];
 const mockStore = configureStore(middlewares);
