@@ -2,6 +2,10 @@ body {
   margin: 5px;
 }
 
+html {
+  overflow-y:scroll;
+}
+
 ul {
   list-style-type: none;
 }
