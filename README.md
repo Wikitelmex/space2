@@ -13,6 +13,8 @@
 ## Live Demo
 working..
 
+## Screenshot
+![image](https://user-images.githubusercontent.com/59240486/142464085-7ea17d81-8ba5-43f5-832c-77e00b25aee3.png)
 
 ## Getting Started
 Before we start, make sure you fit the prerequisites, the source code is inside the folder SRC/ 
