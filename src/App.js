@@ -22,7 +22,7 @@ function App() {
         <br />
         <br />
         <br />
-        <div>
+        <div data-testid="navBar">
           <Switch>
             <Route exact path="/">
               <ProfilePage />
