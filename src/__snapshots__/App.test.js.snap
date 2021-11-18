@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App page with redux 1`] = `
+<DocumentFragment>
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom shadow"
+  >
+    <div
+      class="container-fluid ms-5"
+    >
+      <a
+        aria-current="page"
+        class="navbar-brand h1 active"
+        href="/"
+      >
+        <h3
+          class="fw-bold mt-1"
+        >
+          <img
+            alt="Girl in a jacket"
+            class="me-2"
+            height="40"
+            src="SpaceLogo.png"
+            width="40"
+          />
+          Space Travelers' Hub
+        </h3>
+      </a>
+      <button
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="navbar-toggler"
+        data-bs-target="#navbarNavAltMarkup"
+        data-bs-toggle="collapse"
+        type="button"
+      >
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="collapse navbar-collapse mb-2 me-auto"
+        id="navbarNavAltMarkup"
+      >
+        <ul
+          class="navbar-nav ms-auto text-light me-3"
+        >
+          <li
+            class="nav-link me-3"
+          >
+            <a
+              aria-current="page"
+              class="active-link"
+              href="/"
+            >
+              Profile
+            </a>
+          </li>
+          <li
+            class="nav-link me-3"
+          >
+            <a
+              href="/rockets"
+            >
+              Rockets
+            </a>
+          </li>
+          <li
+            class="nav-link me-3"
+          >
+            <a
+              href="/missions"
+            >
+              Missions
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br />
+  <br />
+  <br />
+  <div
+    data-testid="navBar"
+  >
+    <div>
+      <h1>
+        Profile Page
+      </h1>
+      <div>
+        <h2>
+          My Missions
+        </h2>
+        <div>
+          No Missions loaded yet...
+        </div>
+      </div>
+      <div>
+        <h2>
+          My Rockets
+        </h2>
+        <ul />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

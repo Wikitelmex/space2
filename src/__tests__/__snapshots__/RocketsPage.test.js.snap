@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches ProfilePage component snapshot 1`] = `
+<div>
+  <ul
+    className="p-5"
+    data-testid="rocket-list-test"
+  />
+</div>
+`;

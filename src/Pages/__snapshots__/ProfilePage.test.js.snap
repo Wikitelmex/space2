@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders mission page with redux 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Profile Page
+    </h1>
+    <div>
+      <h2>
+        My Missions
+      </h2>
+      <div>
+        No Missions loaded yet...
+      </div>
+    </div>
+    <div>
+      <h2>
+        My Rockets
+      </h2>
+      <ul />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders profile page with redux 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Profile Page
+    </h1>
+    <div>
+      <h2>
+        My Missions
+      </h2>
+      <div>
+        No Missions loaded yet...
+      </div>
+    </div>
+    <div>
+      <h2>
+        My Rockets
+      </h2>
+      <ul />
+    </div>
+  </div>
+</DocumentFragment>
+`;
