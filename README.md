@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math Magicians
+# Space Travelers' Hub
 > This App uses react, to creat an SPA related to SpaceX rockets and missions.
 
 ## Built With
