@@ -14,7 +14,7 @@ const RocketsList = () => {
   }, []);
 
   return (
-    <ul className="p-5">
+    <ul className="p-5" data-testid="rocket-list-test">
       {rockets.map((rocket) => (
         <li key={rocket.id}>
           <Rocket

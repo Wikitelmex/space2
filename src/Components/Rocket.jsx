@@ -15,7 +15,7 @@ const Rocket = ({
   };
 
   return (
-    <div className=" d-flex flex-row mb-5">
+    <div className=" d-flex flex-row mb-5" data-testid="rocket-item-group">
       <div className="col-2 p">
         <img alt="just a rocket" src={image} className="rocket-img px-2" />
       </div>
