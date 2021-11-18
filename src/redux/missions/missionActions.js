@@ -23,16 +23,16 @@ export const updateMission = (mission) => ({
   payload: mission,
 });
 
-const fetchMissionsRequest = () => ({
+export const fetchMissionsRequest = () => ({
   type: FETCH_MISSIONS_REQUEST,
 });
 
-const fetchMissionsSuccess = (missions) => ({
+export const fetchMissionsSuccess = (missions) => ({
   type: FETCH_MISSIONS_SUCCESS,
   payload: missions,
 });
 
-const fetchMissionsFailure = (error) => ({
+export const fetchMissionsFailure = (error) => ({
   type: FETCH_MISSIONS_FAILURE,
   payload: error,
 });
