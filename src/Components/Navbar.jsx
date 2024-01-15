@@ -25,7 +25,6 @@ const Navbar = () => {
       <div className="container-fluid ms-5">
         <NavLink className="navbar-brand h1" to="/">
           <h3 className="fw-bold mt-1">
-            <img className="me-2" src="SpaceLogo.png" alt="Girl in a jacket" width="40" height="40" />
             Space Travelers&apos; Hub
           </h3>
         </NavLink>

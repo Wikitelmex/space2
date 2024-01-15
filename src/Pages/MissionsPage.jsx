@@ -32,7 +32,7 @@ const MissionsPage = ({ updateMission, fetchMissions, missionData }) => {
             <th className="col-1 border">Mission</th>
             <th className="col-8 border">Description</th>
             <th className="col-1 border">Status</th>
-            <th className="col-2 border"> </th>
+            <th className="col-2 border" aria-label="empty column"> </th>
           </tr>
         </thead>
         <tbody>
